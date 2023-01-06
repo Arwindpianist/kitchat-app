@@ -1,0 +1,26 @@
+{
+  "name": "kitchat-app",
+  "version": "1.0.0",
+  "description": "A simple chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arwindpianist/kitchat-app.git"
+  },
+  "keywords": [
+    "kitchat"
+  ],
+  "author": "Arwindpianist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arwindpianist/kitchat-app/issues"
+  },
+  "homepage": "https://github.com/Arwindpianist/kitchat-app#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.5.4"
+  }
+}
