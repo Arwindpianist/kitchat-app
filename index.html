@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Some basic styling */
+    body {
+      font-family: sans-serif;
+      background-color: #f2f2f2;
+    }
+    #messages {
+      width: 300px;
+      height: 300px;
+      overflow: scroll;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #message-form {
+      width: 300px;
+      display: flex;
+      margin-top: 10px;
+    }
+    #message-form input[type=text] {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+    #message-form button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 5px 15px;
+      cursor: pointer;
+    }
+    #message-form button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <!-- The textarea element will be used to display the messages -->
+  <div id="messages"></div>
+  <!-- The form is used to enter and send new messages -->
+  <form id="message-form">
+    <input type="text" id="message-input" placeholder="Enter a message...">
+    <button type="submit">Send</button>
+  </form>
+  <script>
+    // Get references to the DOM elements we will need
+    var messages = document.getElementById("messages");
+    var messageForm = document.getElementById("message-form");
+    var messageInput = document.getElementById("message-input");
+
+    // Add an event listener to the form to handle form submissions
+    messageForm.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from refreshing the page
+
+      // Get the message from the input field
+      var message = messageInput.value;
+
+      // Clear the input field
+      messageInput.value = "";
+
+      // Add the message to the messages element
+      messages.innerHTML += "<p>" + message + "</p>";
+
+      // Scroll the messages element to the bottom
+      messages.scrollTop = messages.scrollHeight;
+    });
+  </script>
+</body>
+</html>
